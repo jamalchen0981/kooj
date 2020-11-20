@@ -6,6 +6,7 @@ package g00.p03;
 /**
  * 3. Longest Substring Without Repeating Characters
  * Medium
+ * 2ms, 39MB
  * 
  * @author jamal
  *
