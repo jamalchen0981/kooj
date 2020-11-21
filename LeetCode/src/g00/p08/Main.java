@@ -6,7 +6,7 @@ package g00.p08;
 /**
  * 8. String to Integer (atoi)
  * Medium
- * 2ms, 38.9MB
+ * 1ms, 38.8MB
  * 
  * @author jamal
  *
@@ -55,46 +55,27 @@ class Solution {
                 }
         		pivot = begin;
                 if(pivot < n && Character.isDigit(s.charAt(pivot))) {
-	        		int end = n;
-	        		for(int i = pivot; i < s.length(); ++i) {
-	        			if(!Character.isDigit(s.charAt(i))) {
-	        				end = i;
-	        				break;
-	        			}
-	        		}
-	    			if(end - pivot < 10) {
-	    				int x = 0, t = 1;
-	    				for(int i = end - 1; i >= pivot; --i) {
-	    					x += t * (s.charAt(i) - '0');
-	    					t *= 10;
-	    				}
-	    				if(neg) {
-	    					return -x;
-	    				}
-	    				return x;
-	    			} else if(end - pivot == 10) {
-	    				long x = 0, t = 1;
-	    				for(int i = end - 1; i >= pivot; --i) {
-	    					x += t * (s.charAt(i) - '0');
-	    					t *= 10;
-	    				}
-	    				if(neg) {
-	    					if(-x < Integer.MIN_VALUE) {
-	    						return Integer.MIN_VALUE;
-	    					} else {
-	    						return (int)-x;
-	    					}
-	    				}
-	    				if(x > Integer.MAX_VALUE) {
-	    					return Integer.MAX_VALUE;
-	    				}
-	    				return (int)x;
-	    			} else {
-	    				if(neg) {
-	    					return Integer.MIN_VALUE;
-	    				}
-	    				return Integer.MAX_VALUE;
-	    			}
+    				long x = 0;
+    				for(int i = pivot; i < n; ++i) {
+    					if(Character.isDigit(s.charAt(i))) {
+    						x = x * 10 + (s.charAt(i) - '0');
+    						if(neg) {
+    	    					if(-x < Integer.MIN_VALUE) {
+    	    						return Integer.MIN_VALUE;
+    	    					}
+    						} else {
+    							if(x > Integer.MAX_VALUE) {
+    		    					return Integer.MAX_VALUE;
+    		    				}
+    						}
+    					} else {
+    						break;
+    					}
+    				}
+    				if(neg) {
+    					return (int)-x;
+    				}
+    				return (int)x;
                 }
         	}
         }
