@@ -49,7 +49,7 @@ class Solution {
         	if(value > intMin) {
         		return 0;
         	}
-        	return -(int)value;
+        	return (int)-value;
         }
         
         return 0;
