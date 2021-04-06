@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * LeetCode 1. Two Sum
  * Easy
- * 2ms, 39.5MB
+ * 2 ms, 39.5 MB
  * 
  * @author jamal
  *
