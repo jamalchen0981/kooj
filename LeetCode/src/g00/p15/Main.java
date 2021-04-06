@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * 15. 3Sum
  * Medium
- * 158 ms, 47.8 MB
+ * 155 ms, 44.5 MB
  * 
  * @author jamal
  *
@@ -63,7 +63,7 @@ class Solution {
         			plist.add(i - base);
         		}
         	}
-        	Map<String, Integer> map = new HashMap<String, Integer>();
+        	Map<Long, Integer> map = new HashMap<Long, Integer>();
         	// 2 negative, 1 positive
         	for(int i = 0; i < nlist.size(); ++i) {
         		for(int j = i + 1; j < nlist.size(); ++j) {
@@ -72,7 +72,7 @@ class Solution {
         				break;
         			}
         			if(array[x] > 0) {
-        				String m = nlist.get(i) + "" +  nlist.get(j);
+        				Long m = nlist.get(i) * 100000L +  nlist.get(j);
         				if(map.get(m) == null) {
         					list2D.add(Arrays.asList(new Integer[] {nlist.get(i), nlist.get(j), x - base}));
         					map.put(m, 1);
@@ -88,7 +88,7 @@ class Solution {
         				break;
         			}
         			if(array[x] > 0) {
-        				String m = plist.get(i) + "" + plist.get(j);
+        				Long m = plist.get(i) * 100000L + plist.get(j);
         				if(map.get(m) == null) {
         					list2D.add(Arrays.asList(new Integer[] {x - base, plist.get(i), plist.get(j)}));
         					map.put(m, 1);
@@ -101,7 +101,7 @@ class Solution {
         		for(int i = 0; i < nlist.size(); ++i) {
         			int x = -nlist.get(i) + base;
         			if(array[x] > 0) {
-        				String m = nlist.get(i) + "" + 0;
+        				Long m = (long)nlist.get(i);
         				if(map.get(m) == null) {
         					list2D.add(Arrays.asList(new Integer[] {nlist.get(i), 0, x - base}));
         					map.put(m, 1);
