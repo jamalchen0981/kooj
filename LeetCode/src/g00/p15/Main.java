@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * 15. 3Sum
  * Medium
- * 155 ms, 44.5 MB
+ * 69 ms, 44.5 MB
  * 
  * @author jamal
  *
@@ -47,20 +47,15 @@ class Solution {
         	List<Integer> nlist = new ArrayList<>();
         	List<Integer> plist = new ArrayList<>();
         	List<Integer> zlist = new ArrayList<>();
+        	Arrays.sort(nums);
         	for(int i = 0; i < nums.length; ++i) {
-        		array[ base + nums[i] ] += 1;
-        	}
-        	for(int i = base - 1; i >= 0; --i) {
-    			for(int j = 0; j < array[i]; ++j) {
-        			nlist.add(i - base);
-    			}
-        	}
-        	for(int i = 0; i < array[base]; ++i) {
-        		zlist.add(0);
-        	}
-        	for(int i = base + 1; i < size; ++i) {
-        		for(int j = 0; j < array[i]; ++j) {
-        			plist.add(i - base);
+        		array[ base + nums[i] ] = 1;
+        		if(nums[i] < 0) {
+        			nlist.add(0, nums[i]);
+        		} else if(nums[i] == 0) {
+        			zlist.add(0);
+        		} else {
+        			plist.add(nums[i]);
         		}
         	}
         	Map<Long, Integer> map = new HashMap<Long, Integer>();
