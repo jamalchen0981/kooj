@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * 15. 3Sum
  * Medium
- * 41 ms, 45.1 MB
+ * 28 ms, 43.3 MB
  * 
  * @author jamal
  *
@@ -36,8 +36,6 @@ class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> list2D = new ArrayList<>();
         if(nums.length > 0) {
-//        	0 <= nums.length <= 3000
-//        	-105 <= nums[i] <= 105
         	Map<Integer, Integer> nMap = new HashMap<Integer, Integer>();
         	Map<Integer, Integer> pMap = new HashMap<Integer, Integer>();
         	List<Integer> nlist = new ArrayList<>();
@@ -55,49 +53,56 @@ class Solution {
         			pMap.put(nums[i], 1);
         		}
         	}
-        	Map<Long, Integer> map = new HashMap<Long, Integer>();
+        	int pre_i = 0;
         	// 2 negative, 1 positive
         	for(int i = 0; i < nlist.size(); ++i) {
-        		for(int j = i + 1; j < nlist.size(); ++j) {
-        			int x = -(nlist.get(i) + nlist.get(j));
-        			if(x >= 100000) {
-        				break;
-        			}
-        			if(pMap.get(x) != null) {
-        				Long m = nlist.get(i) * 100000L +  nlist.get(j);
-        				if(map.get(m) == null) {
-        					list2D.add(Arrays.asList(new Integer[] {nlist.get(i), nlist.get(j), x}));
-        					map.put(m, 1);
-        				}
-        			}
+        		if(nlist.get(i) != pre_i) {
+        			pre_i = nlist.get(i);
+        			int pre_j = 0;
+	        		for(int j = i + 1; j < nlist.size(); ++j) {
+	        			if(nlist.get(j) != pre_j) {
+	        				pre_j = nlist.get(j);
+		        			int x = -(nlist.get(i) + nlist.get(j));
+		        			if(x >= 100000) {
+		        				break;
+		        			}
+		        			if(pMap.get(x) != null) {
+		        				list2D.add(Arrays.asList(new Integer[] {nlist.get(i), nlist.get(j), x}));
+		        			}
+	        			}
+	        		}
         		}
         	}
+        	pre_i = 0;
         	// 2 positive, 1 negative
         	for(int i = 0; i < plist.size(); ++i) {
-        		for(int j = i + 1; j < plist.size(); ++j) {
-        			int x = -(plist.get(i) + plist.get(j));
-        			if(x < -100000) {
-        				break;
-        			}
-        			if(nMap.get(x) != null) {
-        				Long m = plist.get(i) * 100000L + plist.get(j);
-        				if(map.get(m) == null) {
-        					list2D.add(Arrays.asList(new Integer[] {x, plist.get(i), plist.get(j)}));
-        					map.put(m, 1);
-        				}
-        			}
+        		if(plist.get(i) != pre_i) {
+        			pre_i = plist.get(i);
+        			int pre_j = 0;
+	        		for(int j = i + 1; j < plist.size(); ++j) {
+	        			if(plist.get(j) != pre_j) {
+	        				pre_j = plist.get(j);
+		        			int x = -(plist.get(i) + plist.get(j));
+		        			if(x < -100000) {
+		        				break;
+		        			}
+		        			if(nMap.get(x) != null) {
+		        				list2D.add(Arrays.asList(new Integer[] {x, plist.get(i), plist.get(j)}));
+		        			}
+	        			}
+	        		}
         		}
         	}
+        	pre_i = 0;
         	// 1 zero, 1 positive, 1 negative, if necessary
         	if(zlist.size() > 0) {
         		for(int i = 0; i < nlist.size(); ++i) {
-        			int x = -nlist.get(i);
-        			if(pMap.get(x) != null) {
-        				Long m = (long)nlist.get(i);
-        				if(map.get(m) == null) {
-        					list2D.add(Arrays.asList(new Integer[] {nlist.get(i), 0, x}));
-        					map.put(m, 1);
-        				}
+        			if(nlist.get(i) != pre_i) {
+        				pre_i = nlist.get(i);
+	        			int x = -nlist.get(i);
+	        			if(pMap.get(x) != null) {
+	        				list2D.add(Arrays.asList(new Integer[] {nlist.get(i), 0, x}));
+	        			}
         			}
         		}
         	}
