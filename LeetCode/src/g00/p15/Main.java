@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * 15. 3Sum
  * Medium
- * 182 ms, 47.4 MB
+ * 158 ms, 47.8 MB
  * 
  * @author jamal
  *
@@ -74,7 +74,7 @@ class Solution {
         				break;
         			}
         			if(array[x] > 0) {
-        				String m = nlist.get(i) + "" +  nlist.get(j) + "" + (x - base);
+        				String m = nlist.get(i) + "" +  nlist.get(j);
         				if(map.get(m) == null) {
         					list2D.add(Arrays.asList(new Integer[] {nlist.get(i), nlist.get(j), x - base}));
         					map.put(m, 1);
@@ -90,7 +90,7 @@ class Solution {
         				break;
         			}
         			if(array[x] > 0) {
-        				String m = (x - base) + "" + plist.get(i) + "" + plist.get(j);
+        				String m = plist.get(i) + "" + plist.get(j);
         				if(map.get(m) == null) {
         					list2D.add(Arrays.asList(new Integer[] {x - base, plist.get(i), plist.get(j)}));
         					map.put(m, 1);
@@ -103,7 +103,7 @@ class Solution {
         		for(int i = 0; i < nlist.size(); ++i) {
         			int x = -nlist.get(i) + base;
         			if(array[x] > 0) {
-        				String m = nlist.get(i) + "" + 0 + "" + (x - base);
+        				String m = nlist.get(i) + "" + 0;
         				if(map.get(m) == null) {
         					list2D.add(Arrays.asList(new Integer[] {nlist.get(i), 0, x - base}));
         					map.put(m, 1);
