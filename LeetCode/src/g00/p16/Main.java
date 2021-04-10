@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * LeetCode 16. 3Sum Closest
  * Medium
- * 7 ms, 38.5 MB
+ * 5 ms, 38.5 MB
  * 
  * @author jamal
  *
@@ -30,9 +30,9 @@ class Solution {
     	Arrays.sort(nums);
     	int ans = 10000, ans_t = 10000;
     	int last_k = nums.length - 1;
-    	for(int i = 0; i < nums.length; ++i) {
+    	for(int i = 0; i < last_k; ++i) {
     		int pre_j = 10000;
-    		for(int j = i + 1; j < nums.length; ++j) {
+    		for(int j = i + 1; j < last_k; ++j) {
     			if(nums[j] != pre_j) {
     				pre_j = nums[j];
 	    			int s = nums[i] + nums[j];
