@@ -4,9 +4,9 @@
 package g00.p07;
 
 /**
- * 7. Reverse Integer
+ * LeetCode 7. Reverse Integer
  * Easy
- * 1ms, 36MB
+ * 1 ms, 36 MB
  * 
  * @author jamal
  *

@@ -4,9 +4,9 @@
 package g00.p08;
 
 /**
- * 8. String to Integer (atoi)
+ * LeetCode 8. String to Integer (atoi)
  * Medium
- * 1ms, 38.8MB
+ * 1 ms, 38.8 MB
  * 
  * @author jamal
  *

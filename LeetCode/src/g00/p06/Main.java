@@ -4,9 +4,9 @@
 package g00.p06;
 
 /**
- * 6. ZigZag Conversion
+ * LeetCode 6. ZigZag Conversion
  * Medium
- * 2ms, 39.2MB
+ * 2 ms, 39.2 MB
  * 
  * @author jamal
  *

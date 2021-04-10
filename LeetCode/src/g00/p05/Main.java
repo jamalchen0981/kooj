@@ -4,9 +4,9 @@
 package g00.p05;
 
 /**
- * 5. Longest Palindromic Substring
+ * LeetCode 5. Longest Palindromic Substring
  * Medium
- * 111ms, 42.9MB
+ * 111 ms, 42.9 MB
  * Dynamic Programming
  * 
  * @author jamal

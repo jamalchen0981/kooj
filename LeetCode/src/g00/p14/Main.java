@@ -4,7 +4,7 @@
 package g00.p14;
 
 /**
- * 14. Longest Common Prefix
+ * LeetCode 14. Longest Common Prefix
  * Easy
  * 0 ms, 36.6 MB
  * 

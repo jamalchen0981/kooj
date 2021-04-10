@@ -4,9 +4,9 @@
 package g00.p03;
 
 /**
- * 3. Longest Substring Without Repeating Characters
+ * LeetCode 3. Longest Substring Without Repeating Characters
  * Medium
- * 2ms, 39MB
+ * 2 ms, 39 MB
  * 
  * @author jamal
  *

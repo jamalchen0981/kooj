@@ -4,9 +4,9 @@
 package g00.p05;
 
 /**
- * 5. Longest Palindromic Substring
+ * LeetCode 5. Longest Palindromic Substring
  * Medium
- * 7ms, 39MB
+ * 7 ms, 39 MB
  * Manacher’s Algorithm
  * https://www.geeksforgeeks.org/manachers-algorithm-linear-time-longest-palindromic-substring-part-1/
  * 

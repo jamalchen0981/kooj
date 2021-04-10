@@ -4,9 +4,9 @@
 package g00.p11;
 
 /**
- * 11. Container With Most Water
+ * LeetCode 11. Container With Most Water
  * Medium
- * 2ms, 40.2MB
+ * 2 ms, 40.2 MB
  * 
  * @author jamal
  *

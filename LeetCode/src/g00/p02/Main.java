@@ -6,7 +6,7 @@ package g00.p02;
 /**
  * LeetCode 2. Add Two Numbers
  * Medium
- * 2ms, 39.3MB
+ * 2 ms, 39.3 MB
  * 
  * @author jamal
  *

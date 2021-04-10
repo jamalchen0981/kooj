@@ -4,9 +4,9 @@
 package g00.p09;
 
 /**
- * 9. Palindrome Number
+ * LeetCode 9. Palindrome Number
  * Easy
- * 6ms, 38.2MB
+ * 6 ms, 38.2 MB
  * 
  * @author jamal
  *
