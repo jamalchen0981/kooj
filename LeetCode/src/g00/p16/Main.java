@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * LeetCode 16. 3Sum Closest
  * Medium
- * 8 ms, 39 MB
+ * 7 ms, 38.5 MB
  * 
  * @author jamal
  *
@@ -29,9 +29,9 @@ class Solution {
     public int threeSumClosest(int[] nums, int target) {
     	Arrays.sort(nums);
     	int ans = 10000, ans_t = 10000;
+    	int last_k = nums.length - 1;
     	for(int i = 0; i < nums.length; ++i) {
     		int pre_j = 10000;
-    		int last_k = nums.length - 1;
     		for(int j = i + 1; j < nums.length; ++j) {
     			if(nums[j] != pre_j) {
     				pre_j = nums[j];
