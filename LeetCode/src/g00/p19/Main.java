@@ -4,7 +4,7 @@
 package g00.p19;
 
 /**
- * 19. Remove Nth Node From End of List
+ * LeetCode 19. Remove Nth Node From End of List
  * Medium
  * 0 ms, 36.7 MB
  * 
