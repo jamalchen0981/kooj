@@ -6,7 +6,7 @@ package g00.p32;
 /**
  * LeetCode 32. Longest Valid Parentheses
  * Hard
- * 2 ms, 38.8 MB
+ * 2 ms, 38.9 MB
  * 
  * @author jamal
  *
@@ -59,7 +59,7 @@ class Solution {
     				}
     			}
     		}
-    		if(x - 1 >= 0) {
+    		if(x > 0) {
     			y = index[x - 1] + 1;
     		}
     		if(max < s.length() - y) {
