@@ -6,9 +6,7 @@ package g00.p31;
 /**
  * LeetCode 31. Next Permutation
  * Medium
- * 1 ms, 38.9 MB
- * 
- * Quick Sort
+ * 0 ms, 39.1 MB
  * 
  * @author jamal
  *
@@ -82,42 +80,11 @@ class Solution {
         	nums[x] = nums[y];
         	nums[y] = t;
         }
-        quicksort(nums, x + 1, nums.length - 1);
-    }
-    
-    private static void quicksort(int[] A, int left, int right) {
-    	if(left < right) {
-    		int x = partition(A, left, right);
-    		quicksort(A, left, x - 1);
-    		quicksort(A, x + 1, right);
+        for(int i = x + 1, j = nums.length - 1; i < j; ++i, --j) {
+    		int t = nums[i];
+    		nums[i] = nums[j];
+    		nums[j] = t;
     	}
-    	
-    }
-    
-    private static int partition(int[] A, int left, int right) {
-    	int x = partition2(A, left + 1, right, A[left]);
-    	int t = A[left];
-    	A[left] = A[x];
-    	A[x] = t;
-    	return x;
-    }
-    
-    private static int partition2(int[] A, int left, int right, int s) {
-    	int i = left;
-        while(i < right + 1 && A[i] <= s){ 
-        	++i; 
-        }
-        int j = right;
-        while(j > i - 1 && A[j] > s) { 
-        	--j; 
-        }
-        if(i < j) {
-        	int t = A[i];
-        	A[i] = A[j];
-        	A[j] = t;
-        	return partition2(A, i + 1, j - 1, s);
-        }
-        return j;
     }
 }
 
