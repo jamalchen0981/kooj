@@ -6,7 +6,7 @@ package g00.p41;
 /**
  * LeetCode 41. First Missing Positive
  * Hard
- * 6 ms, 127.7 MB
+ * 5 ms, 124.6 MB
  * 
  * @author jamal
  *
@@ -31,6 +31,7 @@ class Solution {
         for(int i = 0; i < nums.length; ++i) {
         	if(nums[i] == 1) {
         		isOne = false;
+        		break;
         	}
         }
         if(isOne) {
