@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * LeetCode 2233. Maximum Product After K Increments
  * Medium
- * 41 ms, 82.9 MB
+ * 31 ms, 51.4 MB
  * 
  * @author jamal
  *
@@ -33,12 +33,12 @@ class Solution {
         	int i;
         	for(i = 0; i < nums.length; ++i) {
         		if(nums[i] > nums[0]) {
-        			int d = nums[i] - nums[0];
-        			if(d * i <= k) {
+        			int d = (nums[i] - nums[0]) * i;
+        			if(d <= k) {
         				for(int j = 0; j < i; ++j) {
-        					nums[j] += d;
+        					nums[j] = nums[i];
         				}
-        				k -= d * i;
+        				k -= d;
         				break;
         			} else {
         				flag = false;
@@ -65,10 +65,12 @@ class Solution {
         		}
         	}
         	int a = k / i;
-        	for(int j = 0; j < i; ++j) {
-        		nums[j] += a;
+        	if(a > 0) {
+	        	for(int j = 0; j < i; ++j) {
+	        		nums[j] += a;
+	        	}
+	        	k -= a * i;
         	}
-        	k -= a * i;
         }
         
         if(k > 0) {
