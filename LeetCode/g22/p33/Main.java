@@ -66,16 +66,18 @@ class Solution {
         	}
         	int a = k / i;
         	if(a > 0) {
+        		int b = nums[0] + a;
 	        	for(int j = 0; j < i; ++j) {
-	        		nums[j] += a;
+	        		nums[j] = b;
 	        	}
 	        	k -= a * i;
         	}
         }
         
         if(k > 0) {
+        	int b = nums[0] + 1;
         	for(int i = 0; k > 0 && i < nums.length; ++i, --k) {
-        		nums[i] += 1;
+        		nums[i]  = b;
         	}
         }
         
