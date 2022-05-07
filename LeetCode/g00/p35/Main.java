@@ -6,7 +6,7 @@ package g00.p35;
 /**
  * LeetCode 35. Search Insert Position
  * Easy
- * 0 ms, 43.1 MB
+ * 0 ms, 44.5 MB
  * 
  * @author jamal
  *
@@ -28,7 +28,7 @@ class Solution {
         int lo = 0, hi = nums.length - 1;
         int index = -1;
         while(lo <= hi) {
-        	int mid = (lo + hi) / 2;
+        	int mid = lo + (hi - lo) / 2;
         	if(nums[mid] == target) {
         		hi = mid - 1;
         	}
