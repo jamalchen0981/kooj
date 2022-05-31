@@ -4,13 +4,13 @@
 package g22.p79;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * LeetCode 2279. Maximum Bags With Full Capacity of Rocks
  * Medium
- * 601 ms, 106 MB
+ * 38 ms, 98.4 MB
  * 
  * @author jamal
  *
@@ -37,12 +37,12 @@ class Solution {
         		list.add(capacity[i] - rocks[i]);
         	}
         }
-        List<Integer> list2 = list.stream().sorted((a, b) -> {return a - b;}).collect(Collectors.toList());
-        while(additionalRocks > 0 && list2.size() > 0) {
-        	if(additionalRocks >= list2.get(0)) {
-        		additionalRocks -= list2.get(0);
+        int[] ary = list.stream().mapToInt(Integer::intValue).toArray();
+        Arrays.sort(ary);
+        for(int i = 0; i < ary.length; ++i) {
+        	if(additionalRocks >= ary[i]) {
+        		additionalRocks -= ary[i];
         		full += 1;
-        		list2.remove(0);
         	} else {
         		break;
         	}
