@@ -6,7 +6,7 @@ package g22.p88;
 /**
  * LeetCode 2288. Apply Discount to Prices
  * Medium
- * 2582 ms, 637 MB
+ * 799 ms, 119 MB
  * 
  * @author jamal
  *
@@ -47,11 +47,11 @@ class Solution {
         	}
         }
         
-        String str = "";
+        StringBuilder sb = new StringBuilder();
         for(int i = 0; i < ary.length; ++i) {
-        	str += ary[i] + " ";
+        	sb.append(ary[i] + " ");
         }
-        str = str.trim();
+        String str = sb.toString().trim();
         return str;
     }
     
