@@ -17,7 +17,7 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println(new Solution().minMaxGame(new int[] {01,3,5,2,4,8,2,2}));
+		System.out.println(new Solution().minMaxGame(new int[] {1,3,5,2,4,8,2,2}));
 	}
 }
 
